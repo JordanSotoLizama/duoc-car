@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-import { $ } from 'protractor';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -12,7 +11,7 @@ import { $ } from 'protractor';
 export class HomePage implements OnInit {
   data: any;
 
-  constructor(private activeroute: ActivatedRoute, private router:Router, private alertController: AlertController) {
+  constructor(private activeroute: ActivatedRoute, private router:Router, private alertController: AlertController, private loadingCtrl: LoadingController) {
     this.activeroute.queryParams.subscribe(params =>{
       if(this.router.getCurrentNavigation().extras.state){
         this.data = this.router.getCurrentNavigation().extras.state.user;
@@ -24,10 +23,12 @@ export class HomePage implements OnInit {
    }
 
   ngOnInit() {
+    
   }
 
   async presentAlert() {
-    const alert = await this.alertController.create({
+      this.presentLoading();
+      const alert = await this.alertController.create({
       header: 'Datos:',
       message: 'usuario: '+ this.data.usuario,
       buttons: ['OK'],
@@ -36,4 +37,11 @@ export class HomePage implements OnInit {
     await alert.present();
   }
 
+  async presentLoading(){
+    const loading = await this.loadingCtrl.create({
+      message: 'cargando',
+      duration: 2000
+    });
+    return await loading.present();
+  }
 }
