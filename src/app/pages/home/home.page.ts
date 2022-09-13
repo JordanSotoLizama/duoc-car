@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { AlertController, AnimationController, LoadingController, Animation } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +11,9 @@ import { AlertController, LoadingController } from '@ionic/angular';
 export class HomePage implements OnInit {
   data: any;
 
-  constructor(private activeroute: ActivatedRoute, private router:Router, private alertController: AlertController, private loadingCtrl: LoadingController) {
+  constructor(private activeroute: ActivatedRoute,
+              private router:Router, private alertController: AlertController,
+              private loadingCtrl: LoadingController) {
     this.activeroute.queryParams.subscribe(params =>{
       if(this.router.getCurrentNavigation().extras.state){
         this.data = this.router.getCurrentNavigation().extras.state.user;
@@ -23,7 +25,6 @@ export class HomePage implements OnInit {
    }
 
   ngOnInit() {
-    
   }
 
   async presentAlert() {
@@ -45,3 +46,4 @@ export class HomePage implements OnInit {
     return await loading.present();
   }
 }
+

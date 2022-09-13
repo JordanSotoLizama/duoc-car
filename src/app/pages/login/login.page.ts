@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
         user:this.user
       }
     };
-    this.router.navigate(['/home'],navigationExtras);
+    this.router.navigate(['/home'],navigationExtras);//Enrutamiento e interpolación
   }
 
 }
