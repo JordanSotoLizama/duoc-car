@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header >
+  <ion-toolbar >
     <ion-title>
-      Blank
+      DuocCar
     </ion-title>
+    <ion-label style="text-align:end; padding-left: 5%; color: rgb(255,183,27,1);;">
+      versión: 1.0.0
+    </ion-label>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
+<ion-content [fullscreen]="true" >
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <form>
+      <h1>Login</h1>
+      <div id="containerInput">
+        <ion-item color="none" mode="md">
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item color="none" mode="md">
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </div>
+      <div id="containerButton">
+        <ion-button expand="block">Ingresar</ion-button>
+      </div>
+    </form>
   </div>
 </ion-content>
