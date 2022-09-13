@@ -12,21 +12,19 @@
 
 <ion-content [fullscreen]="true" >
   <div id="container">
-    <form>
-      <h1>Login</h1>
-      <div id="containerInput">
-        <ion-item color="none" mode="md">
-          <ion-label position="floating">Usuario</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item color="none" mode="md">
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-      </div>
-      <div id="containerButton">
-        <ion-button expand="block">Ingresar</ion-button>
-      </div>
-    </form>
+    <h1>Login</h1>
+    <div id="containerInput">
+      <ion-item color="none" mode="md">
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
+      </ion-item>
+      <ion-item color="none" mode="md">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+    </div>
+    <div id="containerButton">
+      <ion-button expand="block" (click)="ingresar()">Ingresar</ion-button>
+    </div>
   </div>
 </ion-content>

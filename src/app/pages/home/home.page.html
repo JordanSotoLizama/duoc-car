@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div id="container">
+    <h1>Información del <br> usuario</h1>
+    <div id="containerButton">
+      <ion-button expand="block" (click)="presentAlert()">Mostrar Información</ion-button>
+    </div>
+  </div>
 </ion-content>
