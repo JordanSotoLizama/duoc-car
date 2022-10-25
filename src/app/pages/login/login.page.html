@@ -16,15 +16,18 @@
     <div id="containerInput">
       <ion-item color="none" mode="md">
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="user.usuario"></ion-input>
+        <ion-input type="text" [(ngModel)]="login.usuario"></ion-input>
       </ion-item>
       <ion-item color="none" mode="md">
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+        <ion-input type="password" [(ngModel)]="login.password"></ion-input>
       </ion-item>
     </div>
     <div id="containerButton">
-      <ion-button expand="block" (click)="ingresar()">Ingresar</ion-button>
+      <ion-button expand="block" (click)="ingresar()" >Ingresar</ion-button>
+    </div>
+    <div id="containerButton">
+      <ion-button (click)="registrar()" class="ion-margin-top blanco" expand="block" fill="outline">Registrarse</ion-button>
     </div>
   </div>
 </ion-content>
